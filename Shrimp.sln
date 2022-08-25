@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shrimp.WebAPI", "Shrimp.WebAPI\Shrimp.WebAPI.csproj", "{3C516B88-7ABB-43A2-9327-F03CE2B83236}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shrimp.Data", "Shrimp.Data\Shrimp.Data.csproj", "{8975FBCA-564E-425E-89CE-952FBC208481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shrimp.Services", "Shrimp.Services\Shrimp.Services.csproj", "{FA45CB85-331D-46A5-A78F-F4093F958603}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shrimp.Models", "Shrimp.Models\Shrimp.Models.csproj", "{AD8BA620-ECCE-426E-83AD-E8ADAE9E82AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C516B88-7ABB-43A2-9327-F03CE2B83236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C516B88-7ABB-43A2-9327-F03CE2B83236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C516B88-7ABB-43A2-9327-F03CE2B83236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C516B88-7ABB-43A2-9327-F03CE2B83236}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8975FBCA-564E-425E-89CE-952FBC208481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8975FBCA-564E-425E-89CE-952FBC208481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8975FBCA-564E-425E-89CE-952FBC208481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8975FBCA-564E-425E-89CE-952FBC208481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA45CB85-331D-46A5-A78F-F4093F958603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA45CB85-331D-46A5-A78F-F4093F958603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA45CB85-331D-46A5-A78F-F4093F958603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA45CB85-331D-46A5-A78F-F4093F958603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD8BA620-ECCE-426E-83AD-E8ADAE9E82AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD8BA620-ECCE-426E-83AD-E8ADAE9E82AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD8BA620-ECCE-426E-83AD-E8ADAE9E82AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD8BA620-ECCE-426E-83AD-E8ADAE9E82AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
