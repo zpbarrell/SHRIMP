@@ -14,7 +14,7 @@ namespace Shrimp.Data.Entities
        public int DistrictId { get; set; }
        public DistrictName NameOfDistrict { get; set; }
        public decimal CrimeRate { get; set; }
-       public DateTime Curfew { get; set; } 
+       public int Curfew { get; set; } 
        public DressCode CodeForDress { get; set; }
        public Resources AvailableResources { get; set; }
        public Permits PermitsNeeded { get; set; }
@@ -24,9 +24,6 @@ namespace Shrimp.Data.Entities
        [ForeignKey("HouseId")]
        public int HousesId { get; set; }
     }
-    // public enum DistrictName { Skynet, UmbrellaCorp, BlackMesa, TheInstitute }
-    // public enum DressCode { Strict, Moderate, Comfortable }
-    // public enum Resources { Water, Agriculture, Lumber, Machinery }
-    // public enum Permits { Weapons, Hunting, Communications, Labor }
+    
     
 }

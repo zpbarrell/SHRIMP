@@ -41,7 +41,7 @@ namespace Shrimp.Data.Migrations
                     b.Property<decimal>("CrimeRate")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("Curfew")
+                    b.Property<int>("Curfew")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("HousesId")
