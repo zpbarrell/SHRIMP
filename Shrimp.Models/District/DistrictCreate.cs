@@ -10,7 +10,7 @@ namespace Shrimp.Models.District
     {
         public DistrictName NameOfDistrict { get; set; }
         public decimal CrimeRate { get; set; }
-        public DateTime Curfew { get; set; }
+        public int Curfew { get; set; }
         public DressCode CodeForDress { get; set; }
         public Resources AvailableResources { get; set; }
         public Permits PermitsNeeded { get; set; }

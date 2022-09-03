@@ -17,7 +17,7 @@ namespace Shrimp.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NameOfDistrict = table.Column<int>(type: "enum", nullable: true),
                     CrimeRate = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Curfew = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Curfew = table.Column<int>(type: "int", nullable: false),
                     CodeForDress = table.Column<int>(type: "int", nullable: false),
                     AvailableResources = table.Column<int>(type: "int", nullable: false),
                     PermitsNeeded = table.Column<int>(type: "int", nullable: false),
