@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Shrimp.Data.Enums;
 
 namespace Shrimp.Data.Entities
 {
@@ -23,9 +24,9 @@ namespace Shrimp.Data.Entities
        [ForeignKey("HouseId")]
        public int HousesId { get; set; }
     }
-    public enum DistrictName { Skynet, UmbrellaCorp, BlackMesa, TheInstitute }
-    public enum DressCode { Strict, Moderate, Comfortable }
-    public enum Resources { Water, Agriculture, Lumber, Machinery }
-    public enum Permits { Weapons, Hunting, Communications, Labor }
+    // public enum DistrictName { Skynet, UmbrellaCorp, BlackMesa, TheInstitute }
+    // public enum DressCode { Strict, Moderate, Comfortable }
+    // public enum Resources { Water, Agriculture, Lumber, Machinery }
+    // public enum Permits { Weapons, Hunting, Communications, Labor }
     
 }
