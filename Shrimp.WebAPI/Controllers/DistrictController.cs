@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Shrimp.Models.District;
 using Shrimp.Services.District;
 
 namespace Shrimp.WebAPI.Controllers
@@ -16,6 +17,20 @@ namespace Shrimp.WebAPI.Controllers
         public DistrictController(IDistrictService districtService)
         {
             _districtService = districtService;
+        }
+        [HttpPost("Create")]
+        public async Task<IActionResult> CreateDistrict([FromBody] DistrictCreate model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+                var createResult = await _districtService.CreateDistrictAsync(model);
+                if(createResult)
+                {
+                    return Ok("District Created Successfully");
+                }
+            return BadRequest("District could not be created.");
         }
     }
 }
