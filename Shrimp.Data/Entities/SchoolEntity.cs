@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Shrimp.Data.Enums;
 
 namespace Shrimp.Data.Entities
 {
@@ -16,16 +17,5 @@ namespace Shrimp.Data.Entities
         public float TeacherStudentRatio { get; set; }
         public decimal Costs { get; set; }
         public AfterSchoolPrograms TypeOfASP { get; set; }
-    }
-    public enum NameOfSchool {
-        JohnConnersSchoolForWarriors, T100Academy, TerminatorsForTots, SarahsSurvivalSecondarySchool
-    }
-
-    public enum Classes {
-        SelfDefense, FirstAid, SurvivalSkills, Hunting101, Combat, Scouting, Math
-    }
-
-    public enum AfterSchoolPrograms{
-        Recycling, NewTreeInitiative, RollerDerby, Soccer, HuntingClub, ScoutingClub
     }
 }
