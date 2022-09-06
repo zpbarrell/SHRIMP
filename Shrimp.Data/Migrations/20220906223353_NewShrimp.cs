@@ -1,11 +1,10 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace Shrimp.Data.Migrations
 {
-    public partial class ZacksFixedMigrate : Migration
+    public partial class NewShrimp : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +14,7 @@ namespace Shrimp.Data.Migrations
                 {
                     DistrictId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NameOfDistrict = table.Column<int>(type: "enum", nullable: true),
+                    NameOfDistrict = table.Column<int>(type: "int", nullable: false),
                     CrimeRate = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Curfew = table.Column<int>(type: "int", nullable: false),
                     CodeForDress = table.Column<int>(type: "int", nullable: false),
