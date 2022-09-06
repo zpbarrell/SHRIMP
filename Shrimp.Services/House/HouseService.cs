@@ -17,7 +17,5 @@ namespace Shrimp.Services.House
             _context = context;
         }
         
-        // not done
-        
     }
 }
