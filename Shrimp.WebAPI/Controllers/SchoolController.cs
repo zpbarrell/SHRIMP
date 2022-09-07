@@ -18,7 +18,7 @@ namespace Shrimp.WebAPI.Controllers
             _schoolService = schoolService;
         }
 
-        [HttpPost]
+        [HttpPost("Create")]
         public async Task<IActionResult> CreateSchool([FromBody] SchoolCreate school)
         {
             if (!ModelState.IsValid)
@@ -28,6 +28,13 @@ namespace Shrimp.WebAPI.Controllers
                 return Ok("School was successfully added.");
             
             return BadRequest("School could not be added at this time");
+        }
+
+        [HttpGet("List")]
+        public async Task<IActionResult> GetAllSchools()
+        {
+            var schoolListDisplay = await _schoolService.GetAllSchoolsAsync();
+            return Ok(schoolListDisplay);
         }
     }
 }
