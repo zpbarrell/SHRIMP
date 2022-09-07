@@ -16,6 +16,23 @@ namespace Shrimp.Services.School
         {
             _context = context;
         }
+
+        public async Task<bool> CreateSchoolAsync(SchoolCreate newSchool)
+        {
+            var schoolCreation = new SchoolEntity
+            {
+                Name = newSchool.Name,
+                TypeOfClasses = newSchool.TypeOfClasses,
+                NumberOfStudents = newSchool.NumberOfStudents,
+                TeacherStudentRatio = newSchool.TeacherStudentRatio,
+                Costs = newSchool.Costs,
+                TypeOfASP = newSchool.TypeOfASP
+            };
+            _context.Schools.Add(schoolCreation);
+
+            var numberOfChanges = await _context.SaveChangesAsync();
+            return numberOfChanges == 1;
+        }
         public async Task<IEnumerable<SchoolList>> GetAllSchoolsAsync()
         {
             var schools = await _context.Schools.Select(entity => new SchoolList
