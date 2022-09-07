@@ -29,5 +29,12 @@ namespace Shrimp.WebAPI.Controllers
             
             return BadRequest("School could not be added at this time");
         }
+
+        [HttpGet("List")]
+        public async Task<IActionResult> GetAllSchools()
+        {
+            var schoolListDisplay = await _schoolService.GetAllSchoolsAsync();
+            return Ok(schoolListDisplay);
+        }
     }
 }
