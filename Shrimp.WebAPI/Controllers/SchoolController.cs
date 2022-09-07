@@ -36,5 +36,14 @@ namespace Shrimp.WebAPI.Controllers
             var schoolListDisplay = await _schoolService.GetAllSchoolsAsync();
             return Ok(schoolListDisplay);
         }
+
+        [HttpPut("Update")]
+        public async Task<IactionResult> UpdateSchoolById([FromBody] SchoolUpdate schoolToUpdate)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            return await _schoolService.UpdateSchoolAsync(schoolToUpdate) ? Ok("School has been updated!") : BadRequest("School could not be updated at this time.");
+        }
     }
 }

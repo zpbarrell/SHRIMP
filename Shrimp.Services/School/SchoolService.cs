@@ -45,5 +45,20 @@ namespace Shrimp.Services.School
 
             return schools;
         }
+        public async Task<bool> UpdateSchoolAsync(SchoolUpdate request)
+        {
+            var schools = await _context.Schools.FindAsync(request.SchoolId);
+
+            schools.Name = request.Name;
+            schools.TypeOfClasses = request.TypeOfClasses;
+            schools.NumberOfStudents = request.NumberOfStudents;
+            schools.TeacherStudentRatio = request.TeacherStudentRatio;
+            schools.Costs = request.Costs;
+            schools.TypeOfASP = request.TypeOfASP;
+
+            var numberOfChanges = await _context.SaveChangesAsync();
+
+            return numberOfChanges == 1;
+        }
     }
 }
