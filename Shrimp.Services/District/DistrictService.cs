@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Shrimp.Data;
 using Shrimp.Data.Entities;
 using Shrimp.Models.District;
@@ -32,10 +33,22 @@ namespace Shrimp.Services.District
 
             return numberOfChanges == 1;
         }
-        // public async Task<IEnumerable<DistrictDetail>> GetAllDistrictsAsync()
-        // {
-
-        // }
+        public async Task<IEnumerable<DistrictDetail>> GetAllDistrictsAsync()
+        {
+            var districts = await _context.Districts.Select(entity => new DistrictDetail
+            {
+                DistrictId = entity.DistrictId,
+                NameOfDistrict = entity.NameOfDistrict,
+                CrimeRate = entity.CrimeRate,
+                Curfew = entity.Curfew,
+                CodeForDress = entity.CodeForDress,
+                AvailableResources = entity.AvailableResources,
+                PermitsNeeded = entity.PermitsNeeded,
+                WalkabilityRating = entity.WalkabilityRating
+            })
+            .ToListAsync();
+            return districts;
+        }
 
     }
 }
