@@ -32,10 +32,10 @@ namespace Shrimp.Services.District
 
             return numberOfChanges == 1;
         }
-        public async Task<IEnumerable<DistrictDetail>> GetAllDistrictsAsync()
-        {
+        // public async Task<IEnumerable<DistrictDetail>> GetAllDistrictsAsync()
+        // {
 
-        }
+        // }
 
     }
 }

@@ -18,7 +18,7 @@ namespace Shrimp.WebAPI.Controllers
             _schoolService = schoolService;
         }
 
-        [HttpPost]
+        [HttpPost("Create")]
         public async Task<IActionResult> CreateSchool([FromBody] SchoolCreate school)
         {
             if (!ModelState.IsValid)
