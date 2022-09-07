@@ -38,7 +38,7 @@ namespace Shrimp.WebAPI.Controllers
         }
 
         [HttpPut("Update")]
-        public async Task<IactionResult> UpdateSchoolById([FromBody] SchoolUpdate schoolToUpdate)
+        public async Task<IActionResult> UpdateSchoolById([FromBody] SchoolUpdate schoolToUpdate)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
