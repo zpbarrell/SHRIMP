@@ -10,5 +10,6 @@ namespace Shrimp.Services.School
     {
         Task<bool> CreateSchoolAsync(SchoolCreate request);
         Task<IEnumerable<SchoolList>> GetAllSchoolsAsync();
+        Task<bool> UpdateSchoolAsync(SchoolUpdate request);
     }
 }
