@@ -32,5 +32,11 @@ namespace Shrimp.WebAPI.Controllers
                 }
             return BadRequest("District could not be created.");
         }
+        [HttpGet("Get")]
+        public async Task<IActionResult> GetAllDistricts()
+        {
+            var districts = await _districtService.GetAllDistrictsAsync();
+            return Ok(districts);
+        }
     }
 }
