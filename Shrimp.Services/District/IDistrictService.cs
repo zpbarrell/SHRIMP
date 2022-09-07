@@ -10,5 +10,6 @@ namespace Shrimp.Services.District
     {
         Task<bool> CreateDistrictAsync(DistrictCreate model);
         Task<IEnumerable<DistrictDetail>> GetAllDistrictsAsync();
+        Task<bool> UpdateDistrictAsync(DistrictDetail request);
     }
 }
