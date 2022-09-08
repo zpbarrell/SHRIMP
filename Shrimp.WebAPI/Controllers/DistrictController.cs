@@ -38,5 +38,18 @@ namespace Shrimp.WebAPI.Controllers
             var districts = await _districtService.GetAllDistrictsAsync();
             return Ok(districts);
         }
+        [HttpPut("Update")]
+        public async Task<IActionResult> UpdateDistrictAsync([FromBody] DistrictDetail request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            
+            return await _districtService.UpdateDistrictAsync(request) ? Ok("District was successfully updated") : BadRequest("District could not be updated");
+        }
+        [HttpDelete("{districtId:int}")]
+        public async Task<IActionResult> DeleteDistrict([FromRoute] int districtId)
+        {
+            return await _districtService.DeleteDistrictAsync(districtId) ? Ok($"District {districtId} was deleted.") : BadRequest($"District {districtId} could not be deleted.");
+        }
     }
 }

@@ -49,6 +49,30 @@ namespace Shrimp.Services.District
             .ToListAsync();
             return districts;
         }
+        public async Task<bool> UpdateDistrictAsync(DistrictDetail request)
+        {
+            var updateEntity = await _context.Districts.FindAsync(request.DistrictId);
+            
+            updateEntity.DistrictId = request.DistrictId;
+            updateEntity.NameOfDistrict = request.NameOfDistrict;
+            updateEntity.CrimeRate = request.CrimeRate;
+            updateEntity.Curfew = request.Curfew;
+            updateEntity.CodeForDress = request.CodeForDress;
+            updateEntity.AvailableResources = request.AvailableResources;
+            updateEntity.PermitsNeeded = request.PermitsNeeded;
+            updateEntity.WalkabilityRating = request.WalkabilityRating;
+
+            var numberOfChanges = await _context.SaveChangesAsync();
+            return numberOfChanges == 1;
+        }
+        public async Task<bool> DeleteDistrictAsync(int districtId)
+        {
+            var deleteDistrict = await _context.Districts.FindAsync(districtId);
+
+            //Add error handling if invalid ID is entered
+            _context.Districts.Remove(deleteDistrict);
+            return await _context.SaveChangesAsync() == 1;
+        }
 
     }
 }
