@@ -65,6 +65,14 @@ namespace Shrimp.Services.District
             var numberOfChanges = await _context.SaveChangesAsync();
             return numberOfChanges == 1;
         }
+        public async Task<bool> DeleteDistrictAsync(int districtId)
+        {
+            var deleteDistrict = await _context.Districts.FindAsync(districtId);
+
+            //Add error handling if invalid ID is entered
+            _context.Districts.Remove(deleteDistrict);
+            return await _context.SaveChangesAsync() == 1;
+        }
 
     }
 }
