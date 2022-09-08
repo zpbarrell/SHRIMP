@@ -75,5 +75,13 @@ namespace Shrimp.Services.School
 
             return numberOfChanges == 1;
         }
+
+        public async Task<bool> DeleteSchoolAsync(int id)
+        {
+            var schools = await _context.Schools.FindAsync(id);
+
+            _context.Schools.Remove(schools);
+            return await _context.SaveChangesAsync() == 1;
+        }
     }
 }
