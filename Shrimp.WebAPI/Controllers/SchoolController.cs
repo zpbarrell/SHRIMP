@@ -54,6 +54,10 @@ namespace Shrimp.WebAPI.Controllers
             return await _schoolService.UpdateSchoolAsync(schoolToUpdate) ? Ok("School has been updated!") : BadRequest("School could not be updated at this time.");
         }
 
-        
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteSchool([FromRoute] int id)
+        {
+            return await _schoolService.DeleteSchoolAsync(id) ? Ok("This school has been deleted.") : BadRequest("School failed to be deleted.");
+        }
     }
 }
