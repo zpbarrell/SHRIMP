@@ -46,5 +46,10 @@ namespace Shrimp.WebAPI.Controllers
             
             return await _districtService.UpdateDistrictAsync(request) ? Ok("District was successfully updated") : BadRequest("District could not be updated");
         }
+        [HttpDelete("{districtId:int}")]
+        public async Task<IActionResult> DeleteDistrict([FromRoute] int districtId)
+        {
+            return await _districtService.DeleteDistrictAsync(districtId) ? Ok($"District {districtId} was deleted.") : BadRequest($"District {districtId} could not be deleted.");
+        }
     }
 }
