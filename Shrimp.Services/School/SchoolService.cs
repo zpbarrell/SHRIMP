@@ -45,6 +45,21 @@ namespace Shrimp.Services.School
 
             return schools;
         }
+
+        public async Task<SchoolDisplay> GetSchoolByIdAsync(int id)
+        {
+            var schools = await _context.Schools.FirstOrDefaultAsync(s => s.SchoolId == id);
+            return schools is null ? null : new SchoolDisplay
+            {
+                SchoolId = schools.SchoolId,
+                Name = schools.Name,
+                TypeOfClasses = schools.TypeOfClasses,
+                NumberOfStudents = schools.NumberOfStudents,
+                TeacherStudentRatio = schools.TeacherStudentRatio,
+                Costs = schools.Costs,
+                TypeOfASP = schools.TypeOfASP
+            };
+        }
         public async Task<bool> UpdateSchoolAsync(SchoolUpdate request)
         {
             var schools = await _context.Schools.FindAsync(request.SchoolId);

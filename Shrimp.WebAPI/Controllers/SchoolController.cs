@@ -37,6 +37,14 @@ namespace Shrimp.WebAPI.Controllers
             return Ok(schoolListDisplay);
         }
 
+        [HttpGet("{id:int}")]
+        public async  Task<IActionResult> GetSchoolById([FromRoute] int id)
+        {
+            var displayToUser = await _schoolService.GetSchoolByIdAsync(id);
+            return displayToUser is not null ? Ok(displayToUser) : NotFound();
+        }
+
+
         [HttpPut("Update")]
         public async Task<IActionResult> UpdateSchoolById([FromBody] SchoolUpdate schoolToUpdate)
         {
@@ -45,5 +53,7 @@ namespace Shrimp.WebAPI.Controllers
 
             return await _schoolService.UpdateSchoolAsync(schoolToUpdate) ? Ok("School has been updated!") : BadRequest("School could not be updated at this time.");
         }
+
+        
     }
 }
