@@ -11,7 +11,7 @@ namespace Shrimp.Data.Entities
     public class DistrictEntity
     {
         [Key]
-       public int DistrictId { get; set; }
+       public int Id { get; set; }
        public DistrictName NameOfDistrict { get; set; }
        public decimal CrimeRate { get; set; }
        public int Curfew { get; set; } 
@@ -19,10 +19,10 @@ namespace Shrimp.Data.Entities
        public Resources AvailableResources { get; set; }
        public Permits PermitsNeeded { get; set; }
        public int WalkabilityRating { get; set; }
-       [ForeignKey("SchoolId")]
-       public int SchoolsId { get; set; }
-       [ForeignKey("HouseId")]
-       public int HousesId { get; set; }
+    //    [ForeignKey("SchoolId")]
+    //    public int SchoolsId { get; set; }
+    //    [ForeignKey("HouseId")]
+    //    public int HousesId { get; set; }
     }
     
     

@@ -19,15 +19,19 @@ namespace Shrimp.WebAPI.Controllers
         }
 
         [HttpPost("Create")]
-        public async Task<IActionResult> CreateSchool([FromBody] SchoolCreate school)
+        public async Task<IActionResult> CreateSchool([FromBody] SchoolCreate newSchool)
         {
             if (!ModelState.IsValid)
+            {
                 return BadRequest(ModelState);
-
-            if(await _schoolService.CreateSchoolAsync(school))
-                return Ok("School was successfully added.");
+            }
+             var schoolCreateResult = await _schoolService.CreateSchoolAsync(newSchool);
+             if (schoolCreateResult)
+             {
+                return Ok("School created successfully");
+             }
+             return BadRequest("School could not be created successfully.");
             
-            return BadRequest("School could not be added at this time");
         }
 
         [HttpGet("List")]

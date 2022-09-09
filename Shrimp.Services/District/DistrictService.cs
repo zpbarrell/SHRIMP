@@ -37,7 +37,7 @@ namespace Shrimp.Services.District
         {
             var districts = await _context.Districts.Select(entity => new DistrictDetail
             {
-                DistrictId = entity.DistrictId,
+                DistrictId = entity.Id,
                 NameOfDistrict = entity.NameOfDistrict,
                 CrimeRate = entity.CrimeRate,
                 Curfew = entity.Curfew,
@@ -53,7 +53,7 @@ namespace Shrimp.Services.District
         {
             var updateEntity = await _context.Districts.FindAsync(request.DistrictId);
             
-            updateEntity.DistrictId = request.DistrictId;
+            updateEntity.Id = request.DistrictId;
             updateEntity.NameOfDistrict = request.NameOfDistrict;
             updateEntity.CrimeRate = request.CrimeRate;
             updateEntity.Curfew = request.Curfew;
