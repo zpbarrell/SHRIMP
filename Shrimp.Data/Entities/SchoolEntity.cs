@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using Shrimp.Data.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Shrimp.Data.Entities
 {
@@ -17,5 +18,7 @@ namespace Shrimp.Data.Entities
         public float TeacherStudentRatio { get; set; }
         public decimal Costs { get; set; }
         public AfterSchoolPrograms TypeOfASP { get; set; }
+        public int DistrictId { get; set; }
+        
     }
 }

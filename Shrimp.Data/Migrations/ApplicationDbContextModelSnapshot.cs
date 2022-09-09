@@ -23,11 +23,11 @@ namespace Shrimp.Data.Migrations
 
             modelBuilder.Entity("Shrimp.Data.Entities.DistrictEntity", b =>
                 {
-                    b.Property<int>("DistrictId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DistrictId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("AvailableResources")
                         .HasColumnType("int");
@@ -41,24 +41,61 @@ namespace Shrimp.Data.Migrations
                     b.Property<int>("Curfew")
                         .HasColumnType("int");
 
-                    b.Property<int>("HousesId")
-                        .HasColumnType("int");
-
                     b.Property<int>("NameOfDistrict")
                         .HasColumnType("int");
 
                     b.Property<int>("PermitsNeeded")
                         .HasColumnType("int");
 
-                    b.Property<int>("SchoolsId")
-                        .HasColumnType("int");
-
                     b.Property<int>("WalkabilityRating")
                         .HasColumnType("int");
 
-                    b.HasKey("DistrictId");
+                    b.HasKey("Id");
 
                     b.ToTable("Districts");
+                });
+
+            modelBuilder.Entity("Shrimp.Data.Entities.HouseEntity", b =>
+                {
+                    b.Property<int>("HouseID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HouseID"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Bathrooms")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Bedrooms")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DistrictId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("HousePrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("HousingAmenities")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RadtiationLevels")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SafetyRating")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SquareFootage")
+                        .HasColumnType("int");
+
+                    b.HasKey("HouseID");
+
+                    b.HasIndex("DistrictId");
+
+                    b.ToTable("Houses");
                 });
 
             modelBuilder.Entity("Shrimp.Data.Entities.SchoolEntity", b =>
@@ -71,6 +108,9 @@ namespace Shrimp.Data.Migrations
 
                     b.Property<decimal>("Costs")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("DistrictId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Name")
                         .HasColumnType("int");
@@ -89,7 +129,31 @@ namespace Shrimp.Data.Migrations
 
                     b.HasKey("SchoolId");
 
+                    b.HasIndex("DistrictId");
+
                     b.ToTable("Schools");
+                });
+
+            modelBuilder.Entity("Shrimp.Data.Entities.HouseEntity", b =>
+                {
+                    b.HasOne("Shrimp.Data.Entities.DistrictEntity", "District")
+                        .WithMany()
+                        .HasForeignKey("DistrictId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("District");
+                });
+
+            modelBuilder.Entity("Shrimp.Data.Entities.SchoolEntity", b =>
+                {
+                    b.HasOne("Shrimp.Data.Entities.DistrictEntity", "District")
+                        .WithMany()
+                        .HasForeignKey("DistrictId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("District");
                 });
 #pragma warning restore 612, 618
         }

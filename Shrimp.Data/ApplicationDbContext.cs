@@ -15,7 +15,7 @@ namespace Shrimp.Data
         }
             public DbSet<DistrictEntity> Districts { get; set; }
             public DbSet<SchoolEntity> Schools { get; set; }
-            
+            public DbSet<HouseEntity> Houses { get; set; }
     }
     
 }

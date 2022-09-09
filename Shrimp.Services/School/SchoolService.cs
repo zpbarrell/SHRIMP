@@ -26,7 +26,8 @@ namespace Shrimp.Services.School
                 NumberOfStudents = newSchool.NumberOfStudents,
                 TeacherStudentRatio = newSchool.TeacherStudentRatio,
                 Costs = newSchool.Costs,
-                TypeOfASP = newSchool.TypeOfASP
+                TypeOfASP = newSchool.TypeOfASP,
+                DistrictId = newSchool.DistrictId,
             };
             _context.Schools.Add(schoolCreation);
 
