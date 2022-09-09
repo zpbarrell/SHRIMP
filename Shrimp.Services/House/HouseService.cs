@@ -6,16 +6,17 @@ using Shrimp.Data.Entities;
 using Shrimp.Data;
 // using Shrimp.Models.House;
 using Microsoft.EntityFrameworkCore;
-
-// namespace Shrimp.Services.House
-// {
-//     public class HouseService : IHouseService
-//     {
-//         private readonly ApplicationDbContext _context;
-//         public HouseService(ApplicationDbContext context)
-//         {
-//             _context = context;
-//         }
+/*
+namespace Shrimp.Services.House
+{
+    public class HouseService : IHouseService
+    {
+        private readonly ApplicationDbContext _context;
+        public HouseService(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         
-//     }
-// }
+    }
+}
+*/
