@@ -65,6 +65,16 @@ namespace Shrimp.Services.District
             var numberOfChanges = await _context.SaveChangesAsync();
             return numberOfChanges == 1;
         }
+        public async Task<bool> UpdateCrimeRateByDistrictIdAsync(DistrictUpdate newCrimeRate)
+        {
+            var updateCrimeRate = await _context.Districts.FindAsync(newCrimeRate.DistrictId);
+
+            updateCrimeRate.Id = newCrimeRate.DistrictId;
+            updateCrimeRate.CrimeRate = newCrimeRate.CrimeRate;
+
+            var numberOfChanges = await _context.SaveChangesAsync();
+            return numberOfChanges == 1;
+        }
         public async Task<bool> DeleteDistrictAsync(int districtId)
         {
             var deleteDistrict = await _context.Districts.FindAsync(districtId);
