@@ -20,9 +20,8 @@ namespace Shrimp.Data.Entities
         public Amenities HousingAmenities { get; set; }
         public int RadtiationLevels { get; set; }
         public int SafetyRating { get; set; }
-        [ForeignKey(nameof(District))]
+        
         public int DistrictId { get; set; }
-        public virtual DistrictEntity District { get; set; }
     }
 
 }
