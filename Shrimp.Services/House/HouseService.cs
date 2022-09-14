@@ -9,7 +9,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Shrimp.Services.House
 {
+    public class HouseService : IHouseService
+    {
         private readonly ApplicationDbContext _context;
+
         public HouseService(ApplicationDbContext context)
         {
             _context = context;
@@ -38,7 +41,7 @@ namespace Shrimp.Services.House
         {
             var houses = await _context.Houses.Select(entity => new HouseList
             {
-                HouseId = entity.HouseId,
+                HouseID = entity.HouseID,
                 Address = entity.Address,
                 HousePrice = entity.HousePrice,
                 SquareFootage = entity.SquareFootage
@@ -48,9 +51,9 @@ namespace Shrimp.Services.House
             return houses;
         }
 
-        public async Task<HouseDisplay> GetHouseByIdAsync(int id)
+        public async Task<HouseDisplay> GetHouseByIDAsync(int id)
         {
-            var houses = await _context.Houses.FirstOrDefaultAsync(s => s.HouseId == id);
+            var houses = await _context.Houses.FirstOrDefaultAsync(s => s.HouseID == id);
             return houses is null ? null : new HouseDisplay
             {
                 Address = houses.Address,
@@ -66,17 +69,17 @@ namespace Shrimp.Services.House
         }
         public async Task<bool> UpdateHouseAsync(HouseUpdate request)
         {
-            var houses = await _context.Houses.FindAsync(request.HouseId);
+            var houses = await _context.Houses.FindAsync(request.HouseID);
 
-            Address = request.Address;
-            HousePrice = request.HousePrice;
-            SquareFootage = request.SquareFootage;
-            Bedrooms = request.Bedrooms;
-            Bathrooms = request.Bathrooms;
-            HousingAmenities = request.HousingAmenities;
-            RadtiationLevels = request.RadtiationLevels;
-            SafetyRating = request.SafetyRating;
-            DistrictId = request.DistrictId;
+            houses.Address = request.Address;
+            houses.HousePrice = request.HousePrice;
+            houses.SquareFootage = request.SquareFootage;
+            houses.Bedrooms = request.Bedrooms;
+            houses.Bathrooms = request.Bathrooms;
+            houses.HousingAmenities = request.HousingAmenities;
+            houses.RadtiationLevels = request.RadtiationLevels;
+            houses.SafetyRating = request.SafetyRating;
+            houses.DistrictId = request.DistrictId;
 
             var numberOfChanges = await _context.SaveChangesAsync();
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using Shrimp.Data.Enums;
@@ -27,5 +28,7 @@ namespace Shrimp.Models.House
         public int RadtiationLevels { get; set; }
         [Required]
         public int SafetyRating { get; set; }
+        [ForeignKey(nameof(District))]
+        public int DistrictId { get; set; }
     }
 }
