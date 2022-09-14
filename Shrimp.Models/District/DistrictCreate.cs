@@ -9,7 +9,7 @@ namespace Shrimp.Models.District
 {
     public class DistrictCreate
     {
-        [Display(Name = "NameOfDistrict")]
+        // [Display(Name = "NameOfDistrict")]
         public DistrictName NameOfDistrict { get; set; }
         public decimal CrimeRate { get; set; }
         public int Curfew { get; set; }
@@ -19,8 +19,4 @@ namespace Shrimp.Models.District
         public int WalkabilityRating { get; set; }
 
     }
-    // public enum DistrictName { Skynet, UmbrellaCorp, BlackMesa, TheInstitute }
-    // public enum DressCode { Strict, Moderate, Comfortable }
-    // public enum Resources { Water, Agriculture, Lumber, Machinery }
-    // public enum Permits { Weapons, Hunting, Communications, Labor }
 }

@@ -19,11 +19,5 @@ namespace Shrimp.Data.Entities
        public Resources AvailableResources { get; set; }
        public Permits PermitsNeeded { get; set; }
        public int WalkabilityRating { get; set; }
-    //    [ForeignKey("SchoolId")]
-    //    public int SchoolsId { get; set; }
-    //    [ForeignKey("HouseId")]
-    //    public int HousesId { get; set; }
     }
-    
-    
 }
