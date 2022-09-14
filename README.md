@@ -25,4 +25,4 @@ While our front end is under construction, we will be testing our functionality 
 * Swashbuckle.AspNetCore (6.2.3)
 
 ### Diagram:
-![image]()
+<img src="/Users/Zack/Documents/ImmersionEnvironment/ShrimpAPI/Images/Shrimp DB diagram.png" />
