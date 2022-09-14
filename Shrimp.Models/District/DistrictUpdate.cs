@@ -8,6 +8,6 @@ namespace Shrimp.Models.District
     public class DistrictUpdate
     {
         public int DistrictId { get; set; }
-        public Decimal CrimeRate { get; set; }
+        public decimal CrimeRate { get; set; }
     }
 }
