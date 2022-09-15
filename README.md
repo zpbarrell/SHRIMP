@@ -4,9 +4,10 @@
 * Technologies
 * Packages Installed
 * Database Diagram
+* Client-Side Projection
 
 ### Introduction:
-S.H.R.I.M.P is an online Realestate app designed for the post-apocalyptic world. Find the perfect home for you sorted by your favorite School or District. Discover important statistics about your new neighborhood or School. SHRIMPAPI is a Web API built in n-teir architecture layers to protect our database of imformation while allowing for maxiumum functionality. 
+S.H.R.I.M.P is an online Real estate app designed for the post-apocalyptic world. Find the perfect home for you sorted by your favorite School or District. Discover important statistics about your new neighborhood or School. SHRIMP-API is a Web API built in n-teir architecture layers to protect our database of information while allowing for maxiumum functionality. 
 While our front end is under construction, we will be testing our functionality by sending requests to our endpoints through Postman. 
 
 ### Technologies:
@@ -16,7 +17,8 @@ While our front end is under construction, we will be testing our functionality 
 * SQLServer
 * Postman https://www.getpostman.com/collections/46e3760a7c74ca0abc22
 * Trello - https://trello.com/b/YvPQ7gaq/operation-shrimp
-* drawSQL - https://drawsql.app/teams/shrimp/diagrams/shrimp-db
+* drawSQL
+* Figma
 
 ### Packages Installed:
 * Microsoft.EntityFrameworkCore.Design (6.0.8)
@@ -26,3 +28,6 @@ While our front end is under construction, we will be testing our functionality 
 
 ### Diagram:
 ![Shrimp Db Diagram](Images/Shrimp-DB-diagram.png)
+
+### Client-Side Projection
+![Desktop Wireframe](Images/FrontEnd.png)
