@@ -40,7 +40,8 @@ namespace Shrimp.Services.School
             {
                 SchoolId = entity.SchoolId,
                 Name = entity.Name,
-                Costs = entity.Costs
+                Costs = entity.Costs,
+                DistrictId = entity.DistrictId
             })
             .ToListAsync();
 

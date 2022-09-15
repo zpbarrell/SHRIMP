@@ -7,7 +7,7 @@
 * Client-Side Projection
 
 ### Introduction:
-S.H.R.I.M.P is an online Real estate app designed for the post-apocalyptic world. Find the perfect home for you sorted by your favorite School or District. Discover important statistics about your new neighborhood or School. SHRIMP-API is a Web API built in n-teir architecture layers to protect our database of information while allowing for maxiumum functionality. 
+S.H.R.I.M.P is an online real estate app designed for the post-apocalyptic world. Find the perfect home for you sorted by your favorite School or District. Discover important statistics about your new neighborhood or School. SHRIMP-API is a Web API built in n-teir architecture layers to protect our database of information while allowing for maxiumum functionality. 
 While our front end is under construction, we will be testing our functionality by sending requests to our endpoints through Postman. 
 
 ### Technologies:
@@ -26,7 +26,7 @@ While our front end is under construction, we will be testing our functionality 
 * Microsoft.VisualStudio.Web.CodeGeneration.Design (6.0.8)
 * Swashbuckle.AspNetCore (6.2.3)
 
-### Diagram:
+### Database Diagram:
 ![Shrimp Db Diagram](Images/Shrimp-DB-diagram.png)
 
 ### Client-Side Projection
