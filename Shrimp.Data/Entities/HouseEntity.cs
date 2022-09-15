@@ -19,8 +19,7 @@ namespace Shrimp.Data.Entities
         public int Bathrooms { get; set; }
         public Amenities HousingAmenities { get; set; }
         public int RadtiationLevels { get; set; }
-        public int SafetyRating { get; set; }
-        
+        public int SafetyRating { get; set; } 
         public int DistrictId { get; set; }
     }
 
