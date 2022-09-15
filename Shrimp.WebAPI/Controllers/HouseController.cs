@@ -15,8 +15,6 @@ namespace Shrimp.WebAPI.Controllers
             _houseService = houseService;
         }
 
-        // Work on everything beyond this point
-
         [HttpPost("Create")]
         public async Task<IActionResult> CreateHouse([FromBody] HouseCreate newHouse)
         {
