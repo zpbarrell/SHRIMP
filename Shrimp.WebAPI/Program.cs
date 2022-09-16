@@ -3,7 +3,8 @@ using Microsoft.OpenApi.Models;
 using Shrimp.Data;
 using Shrimp.Services.School;
 using Shrimp.Services.District;
-
+using Shrimp.Services.House;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 
 builder.Services.AddScoped<ISchoolService, SchoolService>();
 builder.Services.AddScoped<IDistrictService, DistrictService>();
+builder.Services.AddScoped<IHouseService, HouseService>();
+
+//REMEMBER THIS
+builder.Services.AddControllers().AddJsonOptions(x =>
+x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
 // Add services to the container.
 

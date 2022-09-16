@@ -13,5 +13,6 @@ namespace Shrimp.Services.District
         Task<bool> UpdateDistrictAsync(DistrictDetail request);
         Task<bool> UpdateCrimeRateByDistrictIdAsync(DistrictUpdate newCrimeRate);
         Task<bool> DeleteDistrictAsync(int districtId);
+        // Task<IEnumerable<DistrictDetail>> GetDistrictsByCrimeRateAsync();
     }
 }

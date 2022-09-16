@@ -8,10 +8,10 @@ namespace Shrimp.Services.House
 {
     public interface IHouseService
     {
+        Task<bool> CreateHouseAsync(HouseCreate newHouse);
         Task<IEnumerable<HouseList>> GetAllHousesAsync();
-        Task<bool> CreateHouseAsync(HouseCreate request);
+        Task<HouseDisplay> GetHouseByIDAsync(int id);
         Task<bool> UpdateHouseAsync(HouseUpdate request);
         Task<bool> DeleteHouseAsync(int id);
-        Task<HouseDisplay> GetHouseByIDAsync(int id);
     }
 }
