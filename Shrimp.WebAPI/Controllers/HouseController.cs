@@ -2,12 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Shrimp.Models.House;
 using Shrimp.Services.House;
 
 namespace Shrimp.WebAPI.Controllers
 {
-    public class HouseController : ControllerForHouse
+    [Route("api/[controller]")]
+    [ApiController]
+    public class HouseController : ControllerBase
     {
         private readonly IHouseService _houseService;
         public HouseController(IHouseService houseService)
@@ -22,13 +26,13 @@ namespace Shrimp.WebAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
-             var houseCreateResult = await _houseService.CreateHouseAsync(newHouse);
-             if (houseCreateResult)
-             {
+            var houseCreateResult = await _houseService.CreateHouseAsync(newHouse);
+            if (houseCreateResult)
+            {
                 return Ok("New house was created.");
-             }
-             return BadRequest("House creation was a failure.");
-            
+            }
+            return BadRequest("House creation was a failure.");
+
         }
 
         [HttpGet("List")]
@@ -39,9 +43,9 @@ namespace Shrimp.WebAPI.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async  Task<IActionResult> GetHouseById([FromRoute] int id)
+        public async Task<IActionResult> GetHouseById([FromRoute] int id)
         {
-            var displayToUser = await _houseService.GetHouseByIdAsync(id);
+            var displayToUser = await _houseService.GetHouseByIDAsync(id);
             return displayToUser is not null ? Ok(displayToUser) : NotFound();
         }
 
@@ -60,6 +64,6 @@ namespace Shrimp.WebAPI.Controllers
         {
             return await _houseService.DeleteHouseAsync(id) ? Ok("House was succesffully deleted.") : BadRequest("Failed to delete house.");
 
-
+        }
     }
 }

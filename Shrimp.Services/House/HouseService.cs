@@ -44,7 +44,8 @@ namespace Shrimp.Services.House
                 HouseID = entity.HouseID,
                 Address = entity.Address,
                 HousePrice = entity.HousePrice,
-                SquareFootage = entity.SquareFootage
+                SquareFootage = entity.SquareFootage,
+                DistrictId = entity.DistrictId
             })
             .ToListAsync();
 

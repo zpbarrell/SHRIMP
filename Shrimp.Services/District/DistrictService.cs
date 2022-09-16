@@ -84,5 +84,21 @@ namespace Shrimp.Services.District
             return await _context.SaveChangesAsync() == 1;
         }
 
+        // public async Task<IEnumerable<DistrictDetail>> GetDistrictByCrimeRateAsync()
+        // {
+        //     var crimeDistrict = await _context.Districts.FirstOrDefaultAsync(d => d.CrimeRate < 5);
+        //     return crimeDistrict is null ? null : new DistrictDetail
+        //     {
+        //         DistrictId = crimeDistrict.Id,
+        //         NameOfDistrict = crimeDistrict.NameOfDistrict,
+        //         CrimeRate = crimeDistrict.CrimeRate,
+        //         Curfew = crimeDistrict.Curfew,
+        //         CodeForDress = crimeDistrict.CodeForDress,
+        //         AvailableResources = crimeDistrict.AvailableResources,
+        //         PermitsNeeded = crimeDistrict.PermitsNeeded,
+        //         WalkabilityRating = crimeDistrict.WalkabilityRating
+        //     };
+        //}
+
     }
 }
