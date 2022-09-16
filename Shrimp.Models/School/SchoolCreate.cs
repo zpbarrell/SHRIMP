@@ -1,23 +1,38 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+using Shrimp.Data.Entities;
 using Shrimp.Data.Enums;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Shrimp.Data.Entities
+namespace Shrimp.Models.School
 {
-    public class SchoolEntity
+    public class SchoolCreate
     {
         [Key]
-        public int SchoolId { get; set; } 
+        [Required]
+        public int SchoolId { get; set; }
+
+        [Required]
         public NameOfSchool Name { get; set; }
+
+        [Required]
         public Classes TypeOfClasses { get; set; }
+
+        [Required]
         public int NumberOfStudents { get; set; }
+
+        [Required]
         public float TeacherStudentRatio { get; set; }
+
+        [Required]
         public decimal Costs { get; set; }
+
+        [Required]
         public AfterSchoolPrograms TypeOfASP { get; set; }
+        [ForeignKey(nameof(District))]
         public int DistrictId { get; set; }
         
     }
