@@ -15,7 +15,7 @@ builder.Services.AddScoped<ISchoolService, SchoolService>();
 builder.Services.AddScoped<IDistrictService, DistrictService>();
 builder.Services.AddScoped<IHouseService, HouseService>();
 
-//REMEMBER THIS
+//REMEMBER THIS enum casting 
 builder.Services.AddControllers().AddJsonOptions(x =>
 x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 

@@ -11,6 +11,7 @@ namespace Shrimp.Services.House
         Task<bool> CreateHouseAsync(HouseCreate newHouse);
         Task<IEnumerable<HouseList>> GetAllHousesAsync();
         Task<HouseDisplay> GetHouseByIDAsync(int id);
+        Task<IEnumerable<HouseList>> GetHousesByDistrictIdAsync(int districtId);
         Task<bool> UpdateHouseAsync(HouseUpdate request);
         Task<bool> DeleteHouseAsync(int id);
     }

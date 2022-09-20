@@ -12,6 +12,7 @@ namespace Shrimp.Services.House
     public class HouseService : IHouseService
     {
         private readonly ApplicationDbContext _context;
+        
 
         public HouseService(ApplicationDbContext context)
         {
@@ -67,6 +68,22 @@ namespace Shrimp.Services.House
                 SafetyRating = houses.SafetyRating,
                 DistrictId = houses.DistrictId
             };
+        }
+        //GET HOMES BY DISTRICT
+        // Needs method that allows all results to be shown
+
+        public async Task<IEnumerable<HouseList>> GetHousesByDistrictIdAsync(int districtId)
+        {
+            var query = await _context.Houses.Where(e => e.DistrictId == districtId).Select(e => new HouseList
+            {
+                HouseID = e.HouseID,
+                Address = e.Address,
+                HousePrice = e.HousePrice,
+                SquareFootage = e.SquareFootage,
+                DistrictId = e.DistrictId
+            })
+            .ToListAsync();
+            return query;
         }
         public async Task<bool> UpdateHouseAsync(HouseUpdate request)
         {
