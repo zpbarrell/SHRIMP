@@ -49,6 +49,13 @@ namespace Shrimp.WebAPI.Controllers
             return displayToUser is not null ? Ok(displayToUser) : NotFound();
         }
 
+        [HttpGet("District/{districtId:int}")]
+        public async Task<IActionResult> GetHouseByDistrictId([FromRoute] int districtId)
+        {
+            var districtHouse = await _houseService.GetHousesByDistrictIdAsync(districtId);
+            return districtHouse is not null ? Ok(districtHouse) : NotFound();
+        }
+
 
         [HttpPut("Update")]
         public async Task<IActionResult> UpdateHouseById([FromBody] HouseUpdate houseToUpdate)

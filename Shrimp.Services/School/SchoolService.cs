@@ -62,6 +62,19 @@ namespace Shrimp.Services.School
                 TypeOfASP = schools.TypeOfASP
             };
         }
+
+        public async Task<IEnumerable<SchoolList>> GetSchoolsByDistrictIdAsync(int districtId)
+        {
+            var districtSchools = await _context.Schools.Where(s => s.DistrictId == districtId).Select(s => new SchoolList
+            {
+                SchoolId = s.SchoolId,
+                Name = s.Name,
+                Costs = s.Costs,
+                DistrictId = s.DistrictId
+            })
+            .ToListAsync();
+            return districtSchools;
+        }
         public async Task<bool> UpdateSchoolAsync(SchoolUpdate request)
         {
             var schools = await _context.Schools.FindAsync(request.SchoolId);
